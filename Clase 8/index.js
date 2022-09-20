@@ -26,8 +26,8 @@ function add_product() {                            //crea un objeto Producto y 
 }
 
 function draw_elements (products){
-    let contenedorProductos = document.getElementById("contenedor-productos");
-    contenedorProductos = document.getElementById("contenedor-productos")
+    let contenedor_productos = document.getElementById("contenedor-productos");
+    contenedor_productos = document.getElementById("contenedor-productos")
     for (const producto of products) {
     let column = document.createElement("div");
     column.className = "col-md-4 mt-3 ";
@@ -36,15 +36,16 @@ function draw_elements (products){
         <div class="card">
             <div class="card-body">
             <p class="card-text">Nombre: <b>${producto.name}</b></p>
-            <p class="card-text">Precio compra: <b>${producto.type}</b></p>
-            <p class="card-text">Precio venta: <b>${producto.buy_price}</b></p>
-            <p class="card-text">Cantidad: <b>${producto.sell_price}</b></p>
+            <p class="card-text">Tipo: <b>${producto.type}</b></p>
+            <p class="card-text">Precio Compra: <b>${producto.buy_price}</b></p>
+            <p class="card-text">Precio Venta: <b>${producto.sell_price}</b></p>
             <p class="card-text">Cantidad: <b>${producto.amount}</b></p>
             </div>
         </div>`;
-
-    contenedorProductos.append(column);
+    contenedor_productos.append(column)
     }
+    let product_title = document.getElementById("product_title")
+    product_title.innerText = products.length + " productos ingresados"
 }
 
 function main (){
